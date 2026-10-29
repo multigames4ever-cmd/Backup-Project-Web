@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             redirect('index.php?page=ingredients');
         }
         if ($action === 'transaction') {
-            $productId = (int)($_POST['product_id'] ?? 0);
+            $productId = (int)($_POST['ingredient_id'] ?? 0);
             $type = $_POST['transaction_type'] ?? '';
             if ($type === 'Stock Out' && ($_POST['remove_stock_reason'] ?? '') === 'waste') { $type = 'Waste'; }
             $quantity = (float)($_POST['quantity'] ?? 0);
